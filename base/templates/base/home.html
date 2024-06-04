@@ -1,0 +1,51 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="home.css">
+
+<div class="header">
+    <h1 style="color: rgb(123, 123, 173); font-size: 20px; margin-left: 20px; margin-top: ;">Home Page</h1>
+    
+  </div>
+  
+
+<div>
+
+
+    
+
+    
+    <a href="{% url 'create-room' %}" class="btn btn-danger" style="margin-left: 20px;" >Create Post</a>
+
+<br>
+{% for room in rooms %}
+
+
+<div class="card text-bg-warning mb-3" style="width: 100%;margin-left: 20px; margin-top: 10px; margin-right: 900px;background-color: blue;">
+    <div class="card-body">
+      
+
+
+      <div>
+
+        <a href="{% url 'update-room' room.id %}"style="font: optional;">Edit</a>
+        <a href="{% url 'delete-room' room.id%}">Delete</a>
+    
+    
+       
+        
+        <h5><a href="{% url 'room' room.id %}">{{room.name}}</a></h5>
+        <span>@{{room.host.username}}</span>
+        <small> {{room.topic.name}}</small>
+        
+    </div>
+    </div>
+  </div>
+
+
+{% endfor %}
+</div>
+
+{%endblock%}

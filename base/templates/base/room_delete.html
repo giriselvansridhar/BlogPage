@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+<div class="card text-bg-warning mb-3" style="width: 100%;margin-left: 20px; margin-top: 1px; margin-right: 900px;background-color: blue;">
+    <div class="card-body">
+        <div>
+            <div style="text-align: center; margin-top: 50px;">
+    <form method="POST" style="display: inline-block; text-align: left;">
+        {% csrf_token %}
+        <p>Are you sure you want to delete "{{ obj }}"?</p>
+        <div style="margin-top: 20px;">
+            <a href="{{ request.META.HTTP_REFERER }}" style="margin-right: 10px;">Go back</a>
+            <input type="submit" value="Confirm" style="background-color: red; color: white; border: none; padding: 10px 20px; cursor: pointer;">
+        </div>
+    </form>
+</div>
+            
+        </div>
+        
+        
+        
+
+
+
+{% endblock content %}
+
+
+
+
+
